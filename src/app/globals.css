@@ -62,6 +62,100 @@ body {
   font-size: 16px;
 }
 
-.login-form-input, select {
+.login-form-input,
+select {
   box-sizing: border-box;
- }
+}
+
+.advertiser-dashboard-parent {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.advertiser-sidebar {
+  height: 100vh;
+  flex: 1;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.advertiser-sidebar>img {
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  padding: 0 20px
+}
+
+.advertiser-sidebar-nav>h2 {
+  color: #fff;
+  padding: 20px 25px;
+  cursor: pointer;
+}
+
+.advertiser-sidebar-nav>h2:hover {
+  color: grey;
+}
+
+.advertiser-main-body {
+  height: 100vh;
+  margin: 0;
+  flex: 4;
+  /* overflow-y: scroll;
+  overflow-x: hidden; */
+  overflow: hidden;
+}
+
+/* For WebKit browsers */
+.advertiser-main-body::-webkit-scrollbar {
+  width: 8px;
+  /* Width of the scrollbar */
+}
+
+.advertiser-main-body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  /* Color of the track */
+}
+
+.advertiser-main-body::-webkit-scrollbar-thumb {
+  background: #888;
+  /* Color of the scroll thumb */
+  border-radius: 10px;
+  /* Optional: rounded corners */
+}
+
+.advertiser-main-body::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  /* Color of the scroll thumb on hover */
+}
+
+.navbar {
+  top: 0;
+  display: flex;
+  width: 100%;
+  height: 80px;
+  justify-content: space-between;
+  background-color: #222222;
+}
+
+.nav-user-details {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  color: white;
+}
+
+.nav-user-details>img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin: 0 15px;
+}
+
+.grid-tool-bar {
+  justify-content: end;
+}
+
