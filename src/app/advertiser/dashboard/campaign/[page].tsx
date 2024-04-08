@@ -39,7 +39,8 @@ export default function CampaignPage() {
 
       <div className='advertisement-dashboard-header'>
         <h2>Advertisements</h2>
-        <button>New Advertisement</button>
+        <button className='create-button'>New Advertisement</button>
+
       </div>
       <AdDataGrid></AdDataGrid>
     </div>

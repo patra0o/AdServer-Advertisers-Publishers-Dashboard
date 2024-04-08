@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link';
 
 // Root Layout for advertiser Dashboard
 export default function DashboardLayout({
@@ -9,21 +10,26 @@ export default function DashboardLayout({
     return (
         <div className='advertiser-dashboard-parent'>
             <div className='advertiser-sidebar'>
-                <img src='https://via.placeholder.com/90x90'></img>
-                <div className='advertiser-sidebar-nav'>
-                    <h2>Campaigns</h2>
-                    <h2>Inventory</h2>
-                    <h2>Reports</h2>
-                    <h2>Settings</h2>
+                <div className='advertiser-sidebar-column'>
+                    <img src='https://via.placeholder.com/90x90'></img>
+                    <div className='advertiser-sidebar-nav'>
+                        <h3><Link href="/advertiser/dashboard/" style={{textDecoration: "none", color: "#fff"}}>Campaigns</Link></h3>
+                        <h3>Inventory</h3>
+                        <h3>Reports</h3>
+                        <h3>Settings</h3>
+                    </div>
                 </div>
+                <div></div>
             </div>
             <div className='advertiser-main-body'>
                 <div className='navbar'>
                     <div></div>
-                    <div className='nav-user-details'>
-                        <h2>John Doe</h2>
-                        <img src='https://via.placeholder.com/50x50'></img>
-                        <div></div>
+                    <div className='dropdown'>
+                        <a href='#' style={{ textDecoration: 'none' }}><span>My account</span></a>
+                        <div className="dropdown-content">
+                            <Link href='/advertiser/dashboard/my-account'>Profile</Link>
+                            <Link href='/'>Log-out</Link>
+                        </div>
                     </div>
                 </div><br />
                 {children}
