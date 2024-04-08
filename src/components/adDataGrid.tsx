@@ -9,6 +9,7 @@ interface Ads {
   name: string;
   status: string;
   impressions: string;
+  conversions: number;
   clicks: string;
 }
 
@@ -37,6 +38,7 @@ const AdDataGrid: React.FC = () => {
           name: ad.attributes.name,
           impressions: ad.attributes.impressions,
           clicks: ad.attributes.clicks,
+          conversions: ad.attributes.conversions,
           status: ad.attributes.status,
         }));
         setRows(ads);
@@ -54,6 +56,7 @@ const AdDataGrid: React.FC = () => {
     { field: "name", headerName: "Name", flex: 1 },
     { field: "impressions", headerName: "Impressions", flex: 1 },
     { field: "clicks", headerName: "Clicks", flex: 1 },
+    { field: "conversions", headerName: "Conversions", flex: 1 },
     { field: "status", headerName: "Status", flex: 1 },
   ];
 

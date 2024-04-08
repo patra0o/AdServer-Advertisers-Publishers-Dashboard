@@ -20,24 +20,27 @@ export default function CampaignPage() {
 
       <div className="highlightContainer">
         <div className="highlightItem">
-          <h1>12.5k</h1>
+          <h1><img src='/eye.png' height={40} width={40} style={{ margin: "0 10px" }} />12.5k</h1>
           <h3>Impressions</h3>
         </div>
         <div className="highlightItem">
-          <h1>3.1k</h1>
+          <h1><img src='/click.png' height={40} width={40} style={{ margin: "0 10px" }} />3.1k</h1><br />
           <h3>Clicks</h3>
         </div>
         <div className="highlightItem">
-          <h1>24.8%</h1>
+          <h1><img src='/click-through-rate.png' height={40} width={40} style={{ margin: "0 10px" }} />24.8%</h1>
           <h3>Click Through Rate</h3>
         </div>
         <div className="highlightItem">
-          <h1>792</h1>
+          <h1><img src='/conversion.png' height={40} width={40} style={{ margin: "0 10px" }} />792</h1>
           <h3>Conversions</h3>
         </div>
       </div><br />
 
-      <h2>Advertisements</h2>
+      <div className='advertisement-dashboard-header'>
+        <h2>Advertisements</h2>
+        <button>New Advertisement</button>
+      </div>
       <AdDataGrid></AdDataGrid>
     </div>
   )
