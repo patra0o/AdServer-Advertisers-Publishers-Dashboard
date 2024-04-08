@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { useSearchParams } from 'next/navigation'
-import CampaignDataGrid from '@/components/campaingDataGrid'
+import AdDataGrid from '@/components/adDataGrid'
 
 export default function CampaignPage() {
 
@@ -35,9 +35,10 @@ export default function CampaignPage() {
           <h1>792</h1>
           <h3>Conversions</h3>
         </div>
-      </div>
+      </div><br />
 
-      {/* <CampaignDataGrid></CampaignDataGrid> */}
+      <h2>Advertisements</h2>
+      <AdDataGrid></AdDataGrid>
     </div>
   )
 }
