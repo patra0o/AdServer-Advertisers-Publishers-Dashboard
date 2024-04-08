@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { DataGrid, GridToolbarContainer, GridToolbarQuickFilter, GridToolbarExport } from "@mui/x-data-grid";
+import { useRouter } from 'next/navigation';
 import Swal from "sweetalert2";
 
 // Define the Campaign interface
@@ -14,6 +15,9 @@ interface Campaign {
 const CampaignDataGrid: React.FC = () => {
   const [selectedRow, setSelectedRow] = useState<Campaign | null>(null);
   const [rows, setRows] = useState<Campaign[]>([]);
+
+  const router = useRouter()
+
 
   // Bearer token for Strapi api
   const token = '1ffbd20182b2aa2a662c2675bda97e6c1ea51617c499986af421b7aa072018e0859f9e61c212c3c051075e765a057520d151587e5f12903a57da99973a6e1221000af148ff0eb934c5df6bbad67e4762af1aaa9700c316c83754524122a5c3beae7065e85c8df3242cbba85739eb1b42bd8b2bfe87d9519088e3d4c3f48d53e1';
@@ -69,21 +73,36 @@ const CampaignDataGrid: React.FC = () => {
   // Function to handle row click and display data
   const showData = (params: { row: Campaign }) => {
     setSelectedRow(params.row);
-    Swal.fire({
-      title: "Campaign Selected",
-      html: `
-      <p>Campaign ID: ${params.row.id}</p>
-      <p>Name: ${params.row.name}</p>
-      <p>Start Date: ${params.row.start}</p>
-      <p>End Date: ${params.row.end}</p>
-      <p>Last Updated: ${params.row.updated}</p>
-      `,
-      confirmButtonColor: "#000000"
-    });
+
+
+
+
+
+    // Swal.fire({
+    //   title: "Campaign Selected",
+    //   html: `
+    //   <p>Campaign ID: ${params.row.id}</p>
+    //   <p>Name: ${params.row.name}</p>
+    //   <p>Start Date: ${params.row.start}</p>
+    //   <p>End Date: ${params.row.end}</p>
+    //   <p>Last Updated: ${params.row.updated}</p>
+    //   `,// Construct the query string with individual properties of the row
+    const queryString = new URLSearchParams({
+      id: params.row.id.toString(),
+      name: params.row.name,
+      start: params.row.start,
+      end: params.row.end,
+      updated: params.row.updated,
+    }).toString();
+
+    // Navigate to the dynamic page with the query string
+    router.push(`/advertiser/dashboard/campaign?${queryString}`);
+    //   confirmButtonColor: "#000000"
+    // });
   };
 
   return (
-    <div style={{ height: 400, width: "95%", margin: "0 auto"}}>
+    <div style={{ height: 400, width: "95%", margin: "0 auto" }}>
       <DataGrid
         rows={rows}
         columns={columns}

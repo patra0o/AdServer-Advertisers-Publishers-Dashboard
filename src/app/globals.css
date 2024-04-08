@@ -104,9 +104,8 @@ select {
   height: 100vh;
   margin: 0;
   flex: 4;
-  /* overflow-y: scroll;
-  overflow-x: hidden; */
-  overflow: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 /* For WebKit browsers */
@@ -159,3 +158,23 @@ select {
   justify-content: end;
 }
 
+.highlightContainer {
+  display: flex;
+  flex-direction: 'row';
+  justify-content: 'space-between'; 
+  align-items: 'center';
+  gap: 20px;
+}
+
+.highlightItem {
+  flex: 1;
+  background-color: #fff;
+  padding: 8px;
+  margin: 8px 0px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,.2);
+}
+
+.highlightTextLarge {
+  font-weight: 500;
+}
