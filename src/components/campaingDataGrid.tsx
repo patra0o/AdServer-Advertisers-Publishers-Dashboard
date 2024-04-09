@@ -102,7 +102,7 @@ const CampaignDataGrid: React.FC = () => {
   };
 
   return (
-    <div style={{ height: 400, width: "95%", margin: "0 auto" }}>
+    <div style={{ height: 400, width: "100%", margin: "0 auto" }}>
       <DataGrid
         rows={rows}
         columns={columns}
