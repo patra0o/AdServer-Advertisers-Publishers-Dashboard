@@ -3,6 +3,7 @@
 import React from 'react'
 import { useSearchParams } from 'next/navigation'
 import AdDataGrid from '@/components/adDataGrid'
+import addAdvertisement from '@/components/addAdvertisement'
 
 export default function CampaignPage() {
 
@@ -16,7 +17,7 @@ export default function CampaignPage() {
 
   return (
     <div style={{ padding: "0 20px" }}>
-      <h1>{name}</h1>
+      <h1 style={{marginTop: 70}}>{name}</h1>
 
       <div className="highlightContainer">
         <div className="highlightItem">
@@ -39,10 +40,10 @@ export default function CampaignPage() {
 
       <div className='advertisement-dashboard-header'>
         <h2>Advertisements</h2>
-        <button className='create-button'>New Advertisement</button>
-
+        <button className='create-button' onClick={addAdvertisement}>New Advertisement</button>
       </div>
       <AdDataGrid></AdDataGrid>
+      <br /><br />
     </div>
   )
 }
