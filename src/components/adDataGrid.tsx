@@ -13,7 +13,11 @@ interface Ads {
   clicks: string;
 }
 
-const AdDataGrid: React.FC = () => {
+interface AdDataGridProps {
+  id: number;
+}
+
+export default function AdDataGrid({ id }: AdDataGridProps) {
   const [selectedRow, setSelectedRow] = useState<Ads | null>(null);
   const [rows, setRows] = useState<Ads[]>([]);
 
@@ -25,29 +29,40 @@ const AdDataGrid: React.FC = () => {
 
   // Fetch data from the API when the component mounts
   useEffect(() => {
-    const fetchAds = async () => {
+    const fetchAds = async (campaignID: number) => {
       try {
-
         // Define headers with Authorization
         const headers = { 'Authorization': `Bearer ${token}` };
 
-        const response = await fetch("http://localhost:1337/api/advertisments", { headers });
+        // Fetch campaign with populated ads
+        const response = await fetch(`http://localhost:1337/api/campaigns/${campaignID}?populate=*`, { headers });
         const data = await response.json();
-        const ads = data.data.map((ad: any) => ({
+
+        if (!data.data) {
+          console.error('Campaign not found or error fetching data');
+          return; // Handle case where campaign is not found
+        }
+
+        // Extract and format ad data
+        const ads = data.data.attributes.advertisements.data.map((ad: any) => ({
           id: ad.id,
           name: ad.attributes.name,
+          adSize: ad.attributes.adSize, // Assuming adSize is an attribute in the Ad collection
+          adArtwork: ad.attributes.adArtwork, // Assuming adArtwork is an attribute with media reference
+          description: ad.attributes.description,
           impressions: ad.attributes.impressions,
           clicks: ad.attributes.clicks,
           conversions: ad.attributes.conversions,
           status: ad.attributes.status,
         }));
+
         setRows(ads);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error("Error fetching ads:", error);
       }
     };
 
-    fetchAds();
+    fetchAds(id);
   }, []); // Empty dependency array ensures this runs once on mount
 
   // Define columns for the data grid
@@ -109,4 +124,3 @@ const AdDataGrid: React.FC = () => {
   );
 };
 
-export default AdDataGrid;
