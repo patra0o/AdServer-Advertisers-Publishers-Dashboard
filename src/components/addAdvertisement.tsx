@@ -51,18 +51,17 @@ export default async function addAdvertisement({ adCampaignID }:AdDataGridProps)
             const adData = {
                 name: name,
                 adSize: adSize,
-                adArtwork: adArtwork,
+                artwork: adArtwork,
                 description: description,
                 campaign: adCampaignID,
                 status: "posted",
                 impressions: 0,
                 clicks: 0,
-                conversions: 0,
-
+                conversions: 0
             };
 
             // Send data to Strapi API
-            const response = await fetch('http://localhost:1337/api/advertisements', {
+            const response = await fetch('http://localhost:1337/api/advertisments', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

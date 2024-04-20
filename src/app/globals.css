@@ -290,3 +290,9 @@ select {
 .file-upload-text {
   margin-right: 10px;
 }
+
+.inventory-publishers-grid {
+  display: flex;
+  width: 100%;
+  
+}
