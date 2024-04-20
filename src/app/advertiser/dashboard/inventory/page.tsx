@@ -63,8 +63,8 @@ export default function InventoryPage() {
                 <option value="Side">Side</option>
                 <option value="Bottom">Bottom</option>
             </select>
-            <h3 id="swal-input3" class="swal2-input-label">Price per Mille (N$)</h3>
-            <input type="number" class="swal2-input" required />
+            <h3 class="swal2-input-label">Price per Mille (N$)</h3>
+            <input type="number" class="swal2-input" id="swal-input3" required />
             
             `,
             confirmButtonText: 'Bid to Inventory',
@@ -74,9 +74,8 @@ export default function InventoryPage() {
                 const location = (document.getElementById('swal-input2') as HTMLInputElement).value;
                 const price = (document.getElementById('swal-input3') as HTMLInputElement).value;
     
-                if (!location || !price) {
+                if (!price) {
                     Swal.showValidationMessage('Please fill in all fields');
-                    return;
                 }
     
                 return { location, price };
