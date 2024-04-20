@@ -15,7 +15,7 @@ export default function DashboardLayout({
                     <div className='advertiser-sidebar-nav'>
                         <h3><Link href="/advertiser/dashboard/" style={{textDecoration: "none", color: "#fff"}}>Campaigns</Link></h3>
                         <h3><Link href="/advertiser/dashboard/inventory" style={{textDecoration: "none", color: "#fff"}}>Inventory</Link></h3>
-                        <h3>Reports</h3>
+                        {/* <h3>Reports</h3> */}
                         <h3>Settings</h3>
                     </div>
                 </div>
