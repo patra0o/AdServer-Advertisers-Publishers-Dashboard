@@ -1,5 +1,8 @@
+"use client"
+
 import React from 'react'
 import Link from 'next/link'
+import BidDataGrid from '@/components/bidDataGrid'
 
 export default function PublisherDashboard() {
     return (
@@ -16,10 +19,8 @@ export default function PublisherDashboard() {
                 </div>
             </div>
             <div className='publisher-main-body'>
-                <div className="publisher-main-body-nav">
-                    <h2>Dashboard</h2>
-                    <h2>Bids</h2>
-                </div>
+                <h2>Dashboard</h2>
+
                 <div className="highlightContainer">
                     <div className="highlightItem">
                         <h1><img src='/eye.png' height={40} width={40} style={{ margin: "0 10px" }} />34.1k</h1>
@@ -37,7 +38,10 @@ export default function PublisherDashboard() {
                         <h1><img src='/money.png' height={40} width={40} style={{ margin: "0 10px" }} />N$10.9K</h1>
                         <h3>Income</h3>
                     </div>
-                </div>
+                </div> <br />
+                <h2>Bids Received</h2>
+                <BidDataGrid></BidDataGrid>
+                <br />
             </div>
         </div>
     )
