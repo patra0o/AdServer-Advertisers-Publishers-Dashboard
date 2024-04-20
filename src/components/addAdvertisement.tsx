@@ -54,10 +54,10 @@ export default async function addAdvertisement({ adCampaignID }:AdDataGridProps)
                 artwork: adArtwork,
                 description: description,
                 campaign: adCampaignID,
-                status: "posted",
+                status: "Active",
                 impressions: 0,
                 clicks: 0,
-                conversions: 0
+                conversions: 0,
             };
 
             // Send data to Strapi API
