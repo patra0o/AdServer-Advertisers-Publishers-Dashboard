@@ -7,7 +7,7 @@ export default function Landing() {
   return (
     <div className='home-page-parent'>
       <div className='home-page-container'>
-        <img src='https://via.placeholder.com/125x125'></img>
+        <img src='/dynamic-rockets-logo.png'></img>
         <h2>Dynamic Rockets</h2>
         <h3>Login to your account as</h3>
         <div>

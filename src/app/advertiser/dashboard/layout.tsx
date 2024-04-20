@@ -11,7 +11,7 @@ export default function DashboardLayout({
         <div className='advertiser-dashboard-parent'>
             <div className='advertiser-sidebar'>
                 <div className='advertiser-sidebar-column'>
-                    <img src='https://via.placeholder.com/90x90'></img>
+                    <img src='/dynamic-rockets-logo.png'></img>
                     <div className='advertiser-sidebar-nav'>
                         <h3><Link href="/advertiser/dashboard/" style={{textDecoration: "none", color: "#fff"}}>Campaigns</Link></h3>
                         <h3>Inventory</h3>

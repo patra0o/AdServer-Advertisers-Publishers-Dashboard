@@ -44,7 +44,7 @@ export default function CampaignPage() {
 
         <div className='advertisement-dashboard-header'>
           <h2>Advertisements</h2>
-          <button className='create-button' onClick={addAdvertisement}>New Advertisement</button>
+          <button className='create-button' onClick={() => addAdvertisement({adCampaignID:campaignID})}>New Advertisement</button>
         </div>
         <AdDataGrid id={campaignID}></AdDataGrid>
         <br /><br />
