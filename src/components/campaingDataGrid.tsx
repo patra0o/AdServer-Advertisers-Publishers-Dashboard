@@ -20,8 +20,7 @@ const CampaignDataGrid: React.FC = () => {
 
 
   // Bearer token for Strapi api
-  const token = '1ffbd20182b2aa2a662c2675bda97e6c1ea51617c499986af421b7aa072018e0859f9e61c212c3c051075e765a057520d151587e5f12903a57da99973a6e1221000af148ff0eb934c5df6bbad67e4762af1aaa9700c316c83754524122a5c3beae7065e85c8df3242cbba85739eb1b42bd8b2bfe87d9519088e3d4c3f48d53e1';
-
+  const token = process.env.NEXT_PUBLIC_API_TOKEN;
   // Fetch data from the API when the component mounts
   useEffect(() => {
     const fetchCampaigns = async () => {
